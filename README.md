@@ -1,6 +1,6 @@
-# AI RAG Document Assistant 🚀
+# Enterprise RAG Document Assistant 🚀
 
-An end-to-end Retrieval-Augmented Generation (RAG) backend pipeline built with **Python**, **FastAPI**, **LangChain concepts**, and structured LLM evaluation metrics. Developed to showcase production-ready AI engineering standards.
+An end-to-end Retrieval-Augmented Generation (RAG) backend pipeline built with **Python**, **FastAPI**, **LangChain concepts**, and structured LLM evaluation metrics. Designed for scalable enterprise document querying and context-aware information retrieval.
 
 ## 🛠 Tech Stack & Frameworks
 - **Language:** Python 3.10+
@@ -9,10 +9,10 @@ An end-to-end Retrieval-Augmented Generation (RAG) backend pipeline built with *
 - **Evaluation:** Ragas & DeepEval metrics alignment (Precision, Recall, F1)
 
 ## 📌 Features
-1. **Document Ingestion & Vector Storage:** Endpoint to process and store text vector embeddings.
-2. **Context-Aware RAG Retrieval:** Fetches top-k relevant context chunks dynamically.
-3. **Structured Prompting:** Formats retrieved information into a clean prompt schema.
-4. **LLM Evaluation Logging:** Returns simulated precision and recall metrics for response accuracy.
+1. **Document Ingestion & Vector Storage:** Endpoint to process, chunk, and store text vector embeddings.
+2. **Context-Aware RAG Retrieval:** Dynamically fetches top-k relevant context chunks based on semantic similarity.
+3. **Structured Prompting:** Formats retrieved information into clean prompt schemas for reliable model outputs.
+4. **LLM Evaluation Logging:** Integrates baseline precision and recall metrics to track response accuracy.
 
 ## ⚙️ How to Run Locally
 1. Clone the repository:
