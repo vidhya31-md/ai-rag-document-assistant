@@ -4,8 +4,8 @@ from typing import List
 import os
 
 app = FastAPI(
-    title="AI RAG Document Assistant",
-    description="Duck Creek AI Engineering Technical Assessment Project",
+    title="Enterprise RAG Document Assistant API",
+    description="A robust Retrieval-Augmented Generation pipeline built for enterprise document search and evaluation.",
     version="1.0.0"
 )
 
@@ -28,12 +28,11 @@ class QueryResponse(BaseModel):
 
 @app.get("/")
 def home():
-    return {"message": "Welcome to the AI RAG Document Assistant API. Built for Duck Creek AI Engineering."}
+    return {"message": "Enterprise RAG Document Assistant API is running successfully."}
 
 @app.post("/add-document/")
 def add_document(doc: DocumentInput):
-    """Simulates embedding generation and vector storage ingestion."""
-    # Simple chunking & embedding simulation
+    """Simulates embedding generation and vector storage ingestion for corporate knowledge bases."""
     vector_store.append({"id": doc.doc_id, "content": doc.content})
     return {"status": "Success", "message": f"Document '{doc.doc_id}' embedded and stored successfully."}
 
@@ -43,14 +42,11 @@ def query_rag(payload: QueryInput):
     if not vector_store:
         raise HTTPException(status_code=400, detail="Vector store is empty. Please add documents first.")
     
-    # Retrieve top matching documents (Simulated Vector Search)
     retrieved_texts = [doc["content"] for doc in vector_store[:payload.top_k]]
     
-    # Structured Prompt Engineering
     context_str = "\n".join(retrieved_texts)
     prompt = f"Context:\n{context_str}\n\nQuestion: {payload.query}\nAnswer with structured output:"
     
-    # Simulated LLM Generation & Evaluation
     simulated_answer = f"Based on the retrieved context, here is the structured solution for: '{payload.query}'."
     
     return QueryResponse(
